@@ -17,11 +17,11 @@ Example:
 
 ## To-do
 
-* [x] Publish initial plugin
-* [ ] Set up unit tests
-* [ ] Set up CI/CD using above unit tests
-* [ ] ???
-* [ ] Profit
+- [x] Publish initial plugin
+- [ ] Set up unit tests
+- [ ] Set up CI/CD using above unit tests
+- [ ] ???
+- [ ] Profit
 
 ## Credits
 

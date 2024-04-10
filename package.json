@@ -1,15 +1,29 @@
 {
   "name": "calc",
-  "main": "./lib/calc",
+  "main": "./lib/index",
   "version": "0.2.0",
   "description": "Basic inline calcuator for inkdrop",
   "keywords": [],
   "repository": "https://github.com/arkag/calc",
   "license": "MIT",
   "engines": {
-    "inkdrop": "^4.x"
+    "inkdrop": "^5.8.0"
+  },
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "watch": "rollup -c --bundleConfigAsCjs --watch",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "mathjs": "^7.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "prettier": "^3.2.5",
+    "rollup": "^4.14.1",
+    "unist-util-visit": "^5.0.0"
   }
 }

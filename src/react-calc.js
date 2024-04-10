@@ -1,21 +1,23 @@
-import React from 'react'
-import MathJS from 'mathjs'
+import React from "react";
+import MathJS from "mathjs";
 
-function togglePositives() { showPositives = !showPositives; }
-
-const Math = props => {
-  const lang = props.lang
-  const equation = props.children[0]
-  const result = MathJS.evaluate(equation)
-  if (equation) {
-    try {
-      return React.createElement("span", null, (result < 0 && showPositives ? "" : "+") + result);
-    } catch (e) {
-      return <span>{e.message}</span>
-    }
-  } else {
-    return <span>Invalid inline math expression</span>
+const CalcComponent = (props) => {
+  const showPositives = true; // currently a const value - you will need to change this and get this value from somewhere maybe the settings? https://developers.inkdrop.app/modules/config
+  let result;
+  if (!props.children || !props.children[0]) {
+    return <></>;
   }
-}
+  try {
+    result = MathJS.evaluate(props.children[0]);
+  } catch (e) {
+    return <span>Invalid inline math expression</span>;
+  }
+  return (
+    <span>
+      {(result.entries < 0 && showPositives ? "" : "+") +
+        result.entries}
+    </span>
+  );
+};
 
-export default Math
+export default CalcComponent;
